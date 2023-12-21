@@ -1,5 +1,5 @@
 import React from 'react'
-import image from '../assets/302l [Converted].png'
+import image from '../assets/black.jpg'
 
 const Banner = () => {
     return (

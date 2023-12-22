@@ -8,6 +8,7 @@ import Login from './../Form/Login';
 import Privteroute from './Privateroute';
 import Addtask from '../Layout/Mainlayout/Dashboadlayout/Addtask';
 import Profile from '../Layout/Mainlayout/Dashboadlayout/Profile';
+import Contac from './../Pages/Contac';
 
 const router = createBrowserRouter([
     {
@@ -26,6 +27,14 @@ const router = createBrowserRouter([
      {
       path: "/login",
       element: <Login/>,
+     },
+     {
+      path: "/contact",
+      element: <Contac/>,
+     },
+     {
+      path: "/about",
+      element: <About/>,
      }
     
     ],

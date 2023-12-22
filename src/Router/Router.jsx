@@ -5,6 +5,8 @@ import Home from './../Pages/Home';
 import DashboardLayout from '../Layout/Mainlayout/Dashboadlayout/DashboardLayout';
 import Register from './../Form/Register';
 import Login from './../Form/Login';
+import Privteroute from './Privateroute';
+import Addtask from '../Layout/Mainlayout/Dashboadlayout/Addtask';
 
 const router = createBrowserRouter([
     {
@@ -31,7 +33,12 @@ const router = createBrowserRouter([
 
     {
       path:'/dashboardLayout',
-      element:<DashboardLayout/>
+      element:<Privteroute><DashboardLayout/></Privteroute>
+    },
+    
+    {
+      path:'/dashboardLayout/addtask',
+      element:<Privteroute><Addtask/></Privteroute>
     }
   ])
 

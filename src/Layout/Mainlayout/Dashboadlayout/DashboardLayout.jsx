@@ -2,9 +2,17 @@ import React, { useState } from 'react';
 import { FaBars, FaEdit, FaHome } from 'react-icons/fa';
 import { Link, NavLink } from 'react-router-dom';
 import { MdManageHistory } from "react-icons/md";
+import Auth from '../../../Hook/Auth';
 const DashboardLayout = () => {
     const [showMenu, setShowMenu] = useState(true);
     console.log(showMenu)
+    const{user,userlogout} = Auth()
+  
+    const handlelogout =()=>{
+
+        userlogout()
+
+    }
     return (
         <>
         <div>
@@ -20,9 +28,9 @@ const DashboardLayout = () => {
 
         <div className="mt-8 text-center">
             {/* <img src="" alt="" > */}
-            <img className="w-10 h-10 m-auto rounded-full object-cover lg:w-28 lg:h-28" src="https://tailus.io/sources/blocks/stats-cards/preview/images/second_user.webp" alt="" />
-            <h5 className="hidden mt-4 text-xl font-semibold text-gray-400 lg:block">Cynthia J. Watts</h5>
-            <span className="hidden text-white  lg:block">Admin</span>
+            <img className="w-10 h-10 m-auto rounded-full object-cover lg:w-28 lg:h-28" src={user?.photoURL} alt="" />
+            <h5 className="hidden mt-4 text-xl font-semibold text-gray-400 lg:block">{user?.displayName}</h5>
+            {/* <span className="hidden text-white  lg:block">USER</span> */}
         </div>
 
         <ul className="space-y-2 tracking-wide mt-8">
@@ -49,7 +57,7 @@ const DashboardLayout = () => {
                 
 
                     <NavLink
-  to="/dashboardlayout"
+  to="/dashboardLayout/addtask"
   className={({ isActive, isPending }) =>
     isPending ? "pending" : isActive ? " px-4 py-3 flex items-center space-x-4 rounded-xl text-white bg-gradient-to-r from-sky-600 to-cyan-400" : ""
   }
@@ -88,7 +96,7 @@ const DashboardLayout = () => {
     </div>
 
     <div className="px-6 -mx-6 pt-4 flex justify-between items-center border-white border-t">
-        <button  className="px-4 py-3 text-white  flex items-center space-x-4 rounded-md group">
+        <button onClick={handlelogout} className="px-4 py-3 text-white  flex items-center space-x-4 rounded-md group">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
             </svg>
@@ -209,7 +217,7 @@ const DashboardLayout = () => {
                        </ul>
                 
                        <div className="">
-                       <button  className="px-4 py-3 text-white  flex items-center space-x-4 rounded-md group">
+                       <button onClick={handlelogout}  className="px-4 py-3 text-white  flex items-center space-x-4 rounded-md group">
                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                            </svg>

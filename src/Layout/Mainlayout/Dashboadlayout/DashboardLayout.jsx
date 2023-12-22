@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaBars, FaEdit, FaHome } from 'react-icons/fa';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 import { MdManageHistory } from "react-icons/md";
 import Auth from '../../../Hook/Auth';
 const DashboardLayout = () => {
@@ -39,14 +39,14 @@ const DashboardLayout = () => {
                 
 
                     <NavLink
-  to="/dashboardlayout"
+  to="/dashboardLayout/profile"
   className={({ isActive, isPending }) =>
     isPending ? "pending" : isActive ? " px-4 py-3 flex items-center space-x-4 rounded-xl text-white bg-gradient-to-r from-sky-600 to-cyan-400" : ""
   }
 >
  <div className='flex gap-1 items-center'>
     <FaHome/>
- <span className="-mr-1 font-medium">Dashboard</span>
+ <span className="-mr-1 font-medium">Profile</span>
  </div>
 </NavLink>
 
@@ -227,15 +227,13 @@ const DashboardLayout = () => {
                    </div>
                    
                    </div>
-     <div className="px-6 pt-6 2xl:container">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <div className="md:col-span-2 lg:col-span-1" >
+     <div className="w-full px-10">
+        
                 
                 {/* Sideber */}
+           <Outlet/>
 
-
-            </div>
-        </div>
+         
     </div> 
 </div> 
         </div>

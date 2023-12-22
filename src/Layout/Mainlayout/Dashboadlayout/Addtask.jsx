@@ -77,7 +77,7 @@ const Addtask = () => {
                             placeholder="Description" className="textarea textarea-bordered textarea-lg w-full" ></textarea>
                         {errors.exampleRequired && <span>This field is required</span>}
                     </label>
-                    <button type="submit" className="py-2 px-8 border border-black w-full rounded-full bg-yellow-500">Submit</button>
+                    <button type="submit" className="py-2 px-8 border border-black w-full rounded-full bg-red-500">Submit</button>
                 </form>
             </div>
         </div>

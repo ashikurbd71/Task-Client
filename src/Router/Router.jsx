@@ -7,6 +7,7 @@ import Register from './../Form/Register';
 import Login from './../Form/Login';
 import Privteroute from './Privateroute';
 import Addtask from '../Layout/Mainlayout/Dashboadlayout/Addtask';
+import Profile from '../Layout/Mainlayout/Dashboadlayout/Profile';
 
 const router = createBrowserRouter([
     {
@@ -33,13 +34,21 @@ const router = createBrowserRouter([
 
     {
       path:'/dashboardLayout',
-      element:<Privteroute><DashboardLayout/></Privteroute>
+      element:<Privteroute><DashboardLayout/></Privteroute>,
+      children:[
+        {
+          path:'/dashboardLayout/profile',
+          element:<Privteroute><Profile/></Privteroute>
+        },
+        {
+          path:'/dashboardLayout/addtask',
+          element:<Privteroute><Addtask/></Privteroute>
+        }
+
+      ]
     },
     
-    {
-      path:'/dashboardLayout/addtask',
-      element:<Privteroute><Addtask/></Privteroute>
-    }
+   
   ])
 
 export default router;
